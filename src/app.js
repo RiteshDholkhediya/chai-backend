@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" })); // this is for d
 app.use(express.static("public")); // this middleware is used to handle images, pdf, document request coming from file and will be stored inside public folder(04_chai_backend)=>public
 
 app.use(cookieParser()); // it is for implementing CRUD operation to the client browser()
-
+ 
 // routes imports
 
 import userRouter from "./routes/user.routes.js";

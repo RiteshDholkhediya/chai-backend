@@ -62,7 +62,7 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password); // will compare ecrypt password and entered password
 };
-userSchema.methods.generateAccessToken = function (password) {
+userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
       _id: this._id, // we are getting _id from mongoDB
@@ -74,7 +74,7 @@ userSchema.methods.generateAccessToken = function (password) {
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
   );
 };
-userSchema.methods.generateRefreshToken = function (password) {
+userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
       _id: this._id, // we are getting _id from mongoDB
