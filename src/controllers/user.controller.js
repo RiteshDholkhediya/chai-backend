@@ -55,7 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(409, "User with email or username already exits");
   }
 
-  const avatarLocalPath = req.files?.avatar[0]?.path;
+  const avatarLocalPath = req.files?.avatar[0]?.path; // because we have used multer(npm package) that why we have access to req.files 
   // const coverImageLocalPath = req.files?.coverImage[0]?.path;
   // console.log(req.files); //read this, advised by hitesh sir
 

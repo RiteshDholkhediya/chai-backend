@@ -35,7 +35,7 @@ const userSchema = new Schema(
 
     watchHistory: [
       {
-        type: Schema.Types.ObjectId, // here could be error
+        type: Schema.Types.ObjectId, 
         ref: "Video",
       },
     ],
@@ -92,7 +92,7 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 export const User = mongoose.model("User", userSchema);
 /*
   note: 
-  - adding index property while defining schema helps for searching that string
+  - adding index (at line: 25) property while defining schema helps for searching that string
   - WHere ever we are writing true it can have error msg also like line no. 44
 
  */
